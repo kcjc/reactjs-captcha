@@ -46,9 +46,9 @@ module.exports.useUserInputBlurValidation = function(userInput) {
     return (userInput.getAttribute('data-correct-captcha') !== null);
 };
 
-module.exports.getHtml = function(captchaStyleName, captchaEndpoint, callback) {
+module.exports.getHtml = function(captchaStyleName, captchaEndpoint, captchaLang, callback) {
     var self = this;
-    var url =  captchaEndpoint + '?get=html&c=' + captchaStyleName;
+    var url =  captchaEndpoint + '?get=html&c=' + captchaStyleName + (captchaLang ? '&=' + captchaLang : '');
     this.ajax(url, function(captchaHtml) {
         captchaHtml = self.changeRelativeToAbsoluteUrls(captchaHtml, captchaEndpoint);
         callback(captchaHtml);

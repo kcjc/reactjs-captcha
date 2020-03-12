@@ -71,7 +71,7 @@ class Captcha extends React.Component {
 
     displayHtml(captchaStyleName) {
         let self = this;
-        captchaHelper.getHtml(captchaStyleName, captchaSettings.get().captchaEndpoint, function(captchaHtml) {
+        captchaHelper.getHtml(captchaStyleName, captchaSettings.get().captchaEndpoint, captchaSettings.get().captchaLang, function(captchaHtml) {
             document.getElementById('BDC_CaptchaComponent').innerHTML = captchaHtml;
             self.loadScriptIncludes(captchaStyleName);
         });

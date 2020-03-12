@@ -2,6 +2,7 @@ var captchaHelper = require('./captcha-helper');
 
 window.bdc_react_settings = window.bdc_react_settings || { 
     captchaEndpoint: '',
+    captchaLang: '',
     captchaEnabled: true
 };
 
