@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('preact');
 var captchaSettings = require('./captcha-settings');
 var captchaHelper = require('./captcha-helper');
 
