@@ -8,7 +8,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var React = require('react');
+var React = require('preact');
 var captchaSettings = require('./captcha-settings');
 var captchaHelper = require('./captcha-helper');
 
@@ -103,7 +103,7 @@ var Captcha = function (_React$Component) {
         key: 'displayHtml',
         value: function displayHtml(captchaStyleName) {
             var self = this;
-            captchaHelper.getHtml(captchaStyleName, captchaSettings.get().captchaEndpoint, function (captchaHtml) {
+            captchaHelper.getHtml(captchaStyleName, captchaSettings.get().captchaEndpoint, captchaSettings.get().captchaLang, function (captchaHtml) {
                 document.getElementById('BDC_CaptchaComponent').innerHTML = captchaHtml;
                 self.loadScriptIncludes(captchaStyleName);
             });
